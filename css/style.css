@@ -230,12 +230,10 @@ section .title::after{
     font-weight: 600;
     margin-bottom: 10px;
 }
-.about .about-content .right .text span{
-    color: crimson;
+.about .about-content .right .presentation .mot_cle{
+    color: #dc143c; 
 }
-.about .about-content .right p{
-    text-align: justify;
-}
+
 .about .about-content .right a{
     display: inline-block;
     background: crimson;
@@ -251,6 +249,10 @@ section .title::after{
 .about .about-content .right a:hover{
     color: crimson;
     background: none;
+}
+
+.about .about-content .presentation {
+    text-align: left;
 }
 
 /* projects section styling */
@@ -355,7 +357,6 @@ section .title::after{
   text-align: center;
   color: #ccc;
   padding: 10px 0;
-  height: 150px;
 }
 
 
