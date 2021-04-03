@@ -119,9 +119,7 @@ var typed = new Typed(".typing", {
 });
 
 function onClickModal(object){
-    console.log(object);
     document.querySelector("#"+object.cardId).onclick = () => {
-        console.log(object);
         document.querySelector(".modal").style.display = "block";
         document.querySelector("#"+object.slideId).style.display = "block";
         document.querySelector("#caption").innerHtml = object.captionText;
