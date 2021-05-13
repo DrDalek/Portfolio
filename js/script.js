@@ -3,9 +3,10 @@ let modalCmf = {
 	slideId: "slide_cmf",
 	slideClass: "modal-content-cmf",
 	captionText: "Coupe du monde féminine : Projet universitaire",
-    pictures: ['../images/cmf_group.png',
-        '../images/cmf_group_ipad.png',
-        '../images/cmf_france.png'],
+	presentationClass: "presentation-cmf",
+    pictures: ['./images/cmf_group.png',
+        './images/cmf_group_ipad.png',
+        './images/cmf_france.png'],
     videos: []
 };
 
@@ -14,11 +15,11 @@ let modalDumboV4 = {
 	slideId: "slide_dumbov4",
 	slideClass: "modal-content-dumbov4",
 	captionText: "DumboNetwork : Application de transfert d'archives",
-    pictures: ['../images/dumbo_accueil.png',
-    '../images/dumbo_scan.png',
-    '../images/dumbo_success.png'],
-    videos: [],
-	slideNumber: 2
+	presentationClass: "presentation-dumbov4",
+    pictures: ['./images/Dumbopass/dumbo_accueil.png',
+    './images/Dumbopass/dumbo_scan.png',
+    './images/Dumbopass/dumbo_success.png'],
+    videos: []
 };
 
 let modalSimer = {
@@ -26,9 +27,10 @@ let modalSimer = {
 	slideId: "slide_simer",
 	slideClass: "modal-content-simer",
 	captionText: "Simer : Logiciel de simulation hydraulique",
-    pictures: ['../images/simer_splash.png',
-    '../images/simer_interface.png',
-    '../images/simer_donnees.png'],
+	presentationClass: "presentation-simer",
+    pictures: ['./images/simer_splash.png',
+    './images/simer_interface.png',
+    './images/simer_donnees.png'],
     videos: []
 };
 
@@ -36,10 +38,10 @@ let modalAnimations = {
 	cardId: "animations_croix",
 	slideId: "slide_animations_croix",
 	slideClass: "modal-content-animations-croix",
+	presentationClass: "presentation-croix",
 	captionText: "Animations déstinées aux croix Smartlight",
     pictures: [],
-    videos: ['../videos/animations croix.mp4'],
-	slideNumber: 1
+    videos: ['./videos/animations croix.mp4']
 };
 
 let modalLogo = {
@@ -47,7 +49,8 @@ let modalLogo = {
 	slideId: "slide_logo",
 	slideClass: "modal-content-logo",
 	captionText: "Identité graphique",
-    pictures: ['../images/logo_list.svg','../images/logo_couleurs.svg','../images/logo_histoire.svg'],
+	presentationClass: "presentation-logo",
+    pictures: ['./images/logo_liste.svg','./images/logo_couleurs.svg','./images/logo_histoire.svg'],
     videos: []
 };
 
@@ -55,10 +58,10 @@ let modalDumbopass = {
 	cardId: "dumbopass",
 	slideId: "slide_dumbopass",
 	slideClass: "modal-content-dumbopass",
+	presentationClass: "presentation-dumbopass",
 	captionText: "Application web de gestion des écrans Smartlight",
-    pictures: ['../images/logo_list.svg','../images/logo_couleurs.svg','../images/logo_histoire.svg'],
-    videos: [],
-	slideNumber: 1
+    pictures: ['./images/Dumbopass/Dumbo_maquette.png'],
+    videos: []
 };
 
 var modals = [modalCmf, modalAnimations, modalSimer, modalDumboV4, modalLogo, modalDumbopass];
@@ -107,6 +110,7 @@ document.querySelector('.close').onclick = function () {
     document.querySelector('.modal').style.display = "none";
     modals.forEach(modal => {
         document.getElementById(modal.slideId).style.display = "none";
+		document.querySelector(".presentation."+modal.presentationClass).style.display = "none";
     });
 };
 
@@ -120,11 +124,25 @@ var typed = new Typed(".typing", {
 
 function onClickModal(object){
     document.querySelector("#"+object.cardId).onclick = () => {
-        document.querySelector(".modal").style.display = "block";
-        document.querySelector("#"+object.slideId).style.display = "block";
-        document.querySelector("#caption").innerHtml = object.captionText;
+        document.querySelector(".modal").style.display = "flex";
+        document.querySelector("#"+object.slideId).style.display = "flex";
+		document.querySelector("."+object.presentationClass).style.display = "flex";
+		showNavButtons(object);
 		showSlides(1,object.slideClass,true);
     }
+}
+
+function showNavButtons(object){
+	var elements = document.getElementsByClassName('slide-nav');
+	if(object.pictures.length + object.videos.length >1){
+		for(var i=0; i<elements.length; i++) {
+			elements[i].style.display = "block";
+		}
+	}else{
+		for(var i=0; i<elements.length; i++) {
+			elements[i].style.display = "none";
+		}
+	}
 }
 
 function dispatchOnClickModal(){
@@ -166,7 +184,7 @@ function showSlides(n = 1, elements, isFirst) {
 		}
 		dots[slideIndex - 1].className += " active";
 	}
-	slides[slideIndex - 1].style.display = "block"; 
+	slides[slideIndex - 1].style.display = "flex"; 
 }
 
 function createDotsElements(numberOfDots){

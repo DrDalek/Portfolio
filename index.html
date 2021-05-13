@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
-    <title>Personal Portfolio Website</title>
+    <title>Portfolio : Sonny R.</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="favicon.ico">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body>
@@ -28,10 +28,6 @@
                 <li><a href="#about" class="menu-btn">Présentation</a></li>
                 <li><a href="#projects" class="menu-btn">Projets</a></li>
                 <li><a href="#skills" class="menu-btn">Compétences</a></li>
-                <!--
-                    <li><a href="#teams" class="menu-btn">Teams</a></li>
-                    <li><a href="#contact" class="menu-btn">Contact</a></li>
-                -->
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -89,7 +85,7 @@
                 </div>
                 <div class="card " id="simer">
                     <div class="box">
-                        <img src="./images/simer.png" alt="Simer" style="width: 60%;">
+                        <img src="./images/simer/simer_logo.png" alt="Simer">
                     </div>
                 </div>
                 <div class="card" id="dumbopass">
@@ -113,87 +109,137 @@
                     </div>
                 </div>
                 <!-- Modal content -->
-                <div class="modal">
-                    <span class="close">&times;</span>
-                    <!--Slide Coupe du monde-->
-                    <div class="slideshow-container" id="slide_cmf" style="display: none;">
-                        <div class="modal-content modal-content-cmf">
-                            <img src="./images/cmf_group.png" />
+                <div class="modal-container">
+                    <div class="modal">
+                        <span class="close">&times;</span>
+                        <div class="slideshow">
+                            <div class="slideshow-and-nav">
+                                <div class="slide-nav">
+                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                </div>
+                                <!--Slide Coupe du monde-->
+                                <div class="slideshow-container" id="slide_cmf" style="display: none;">
+                                    <div class="modal-content modal-content-cmf">
+                                        <img src="./images/cmf_group.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-cmf">
+                                        <img src="./images/cmf_group_ipad.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-cmf">
+                                        <img src="./images/cmf_france.png" />
+                                    </div>
+                                </div>
+                                <!--Slide Dumbo-->
+                                <div class="slideshow-container" id="slide_dumbov4" style="display: none;">
+                                    <div class="modal-content modal-content-dumbov4">
+                                        <img src="./images/Dumbopass/mockup-home.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-dumbov4">
+                                        <img src="./images/Dumbopass/mockup-calendar.png" />
+                                    </div>
+                                </div>
+                                <!--Slide Simer-->
+                                <div class="slideshow-container" id="slide_simer" style="display: none;">
+                                    <div class="modal-content modal-content-simer">
+                                        <img src="./images/simer/simer_splash.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-simer">
+                                        <img src="./images/simer/simer_interface.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-simer">
+                                        <img src="./images/simer/simer_donnees.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-simer">
+                                        <img src="./images/simer/simer_3d.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-simer">
+                                        <model-viewer src="./images/simer/simer.glb" alt="Modèle 3D du logo Simer"
+                                        auto-rotate camera-controls disable-zoom></model-viewer>
+                                    </div>
+                                </div>
+                                <!--Slide Animation-->
+                                <div class="slideshow-container" id="slide_animations_croix" style="display: none;">
+                                    <div class="modal-content modal-content-animations-croix">
+                                        <video width="700" controls>
+                                            <source src="./videos/animations croix.mp4" type="video/mp4"></source>
+                                        </video>
+                                    </div>
+                                </div>
+                                <!--Slide logo sonny-->
+                                <div class="slideshow-container" id="slide_logo" style="display: none;">
+                                    <div class="modal-content modal-content-logo">
+                                        <img src="./images/logo/logo_liste.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-logo">
+                                        <img src="./images/logo/logo_couleurs.png" />
+                                    </div>
+                                    <div class="modal-content modal-content-logo">
+                                        <img src="./images/logo/logo_histoire.png" />
+                                    </div>
+                                </div>
+                                <!--Slide Dumbopass-->
+                                <div class="slideshow-container" id="slide_dumbopass" style="display: none;">
+                                    <div class="modal-content modal-content-dumbopass">
+                                        <img src="./images/Dumbopass/Dumbo_maquette.png" />
+                                    </div>
+                                </div>
+                                <div class="slide-nav">
+                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                </div>
+                            </div>
+                            <div class="dotnav" style="text-align:center"></div>
                         </div>
-                        <div class="modal-content modal-content-cmf">
-                            <img src="./images/cmf_group_ipad.png" />
+                        <div class="presentation presentation-cmf" style="display: none;">
+                            <div class="presentation-title">Coupe du monde féminine 2019</div>
+                            <div class="presentation-description">
+                                Projet universitaire sur le développement d'un site web statique <br>sur la coupe du monde féminine 2019.
+                                 <!--<a href="https://bulma.io/" title="bulma.io">Bulma</a>.--> 
+                            </div>
                         </div>
-                        <div class="modal-content modal-content-cmf">
-                            <img src="./images/cmf_france.png" />
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <!--Slide Dumbo-->
-                    <div class="slideshow-container" id="slide_dumbov4" style="display: none;">
-                        <div class="modal-content modal-content-dumbov4">
-                            <img src="./images/Dumbopass/mockup-home.png" />
-                        </div>
-                        <div class="modal-content modal-content-dumbov4">
-                            <img src="./images/Dumbopass/mockup-calendar.png" />
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <!--Slide Simer-->
-                    <div class="slideshow-container" id="slide_simer" style="display: none;">
-                        <div class="modal-content modal-content-simer">
-                            <img src="./images/simer_splash.png" />
-                        </div>
-                        <div class="modal-content modal-content-simer">
-                            <img src="./images/simer_interface.png" />
-                        </div>
-                        <div class="modal-content modal-content-simer">
-                            <img src="./images/simer_donnees.png" />
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
-                    <!--Slide Animation-->
-                    <div class="slideshow-container" id="slide_animations_croix" style="display: none;">
-                        <div class="modal-content modal-content-animations-croix">
-                            <video width="700" controls>
-                                <source src="./videos/animations croix.mp4" type="video/mp4">
-                                </source>
-                            </video>
-                        </div>
-                    </div>
-                    <!--Slide logo sonny-->
-                    <div class="slideshow-container" id="slide_logo" style="display: none;">
-                        <div class="modal-content modal-content-logo">
-                            <img src="./images/logo_liste.svg" />
-                        </div>
-                        <div class="modal-content modal-content-logo">
-                            <img src="./images/logo_couleurs.svg" />
-                        </div>
-                        <div class="modal-content modal-content-logo">
-                            <img src="./images/logo_histoire.svg" />
-                        </div>
-                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    </div>
+                        <div class="presentation presentation-simer" style="display: none;">
+                            <div class="presentation-title">SIMER : Simulation d'écoulement entre deux réservoirs</div>
+                            <div class="presentation-description">
+                               Simer est un logiciel de bureau apportant un apport expérimental aux travaux pratiques des étudiants en mécanique des fluides. 
+                               Son principal objectif est de calculer le débit moyen d'un liquide s'écoulant entre deux réservoirs.  
 
-                    <!--Slide Dumbopass-->
-                    <div class="slideshow-container" id="slide_dumbopass" style="display: none;">
-                        <div class="modal-content modal-content-dumbopass">
-                            <img src="./images/Dumbopass/Dumbo_maquette.png" />
+                               <!--<span class="techno">Technos utilisés : Java, IntelliJ, Maven</span>
+                               <span class="cadre">Cadre de travail : Stage à l'université</span>-->
+                            </div>
+                        </div>
+                        <div class="presentation presentation-dumbopass" style="display: none;">
+                            <div class="presentation-title">Dumbopass : Version 3</div>
+                            <div class="presentation-description">
+                                Dumbopass est une application web facilitant l'envoi de contenu (photos, vidéos, pdf, powerpoint, etc..) sur tout type d'écran.
+                                Bien que destinée principalement aux panneaux de ville, pour afficher de la publicité, Dumbopass peut tout aussi bien être employé pour les écrans dans les salles d'attentes ou dans les centres commerciaux.
+                                
+                                <!--<span class="techno">Technos utilisés : .Net Core, Angular, NodeJs, SQL Server, Raspberry Pi</span>
+                                <span class="cadre">Cadre de travail : Smartlight</span>-->
+                            </div>
+                        </div>
+                        <div class="presentation presentation-croix" style="display: none;">
+                            <div class="presentation-title">Animations de croix de pharmacie</div>
+                            <div class="presentation-description">
+                                Qui dit nouvelle croix, dit nouvelles animations. Réalisées au sein de Smartlight, les animations de croix de pharmacie servent à informer les passants de la présence d'une pharmacie ainsi que des médicaments ou services proposées.
+                                Le but étant de développer des animations sans dénaturaliser les croix. 
+                            </div>
+                        </div>
+                        <div class="presentation presentation-logo" style="display: none;">
+                            <div class="presentation-title">Logo personel</div>
+                            <div class="presentation-description">
+                                Ma première identité visuelle se basant <br>sur la signification de mon prénom. 
+                            </div>
+                        </div>
+                        <div class="presentation presentation-dumbov4" style="display: none;">
+                            <div class="presentation-title">Dumbopass : Version 4</div>
+                            <div class="presentation-description">
+                                Maquette de la nouvelle version de l'application Dumbopass. La mission ici était de rajouter une touche de fraîcheur à l'application. 
+                                Certaines pages ont également été repensées de manière à rendre la navigation plus aisée. 
+                            </div>
                         </div>
                     </div>
-
-                    <div id="caption"></div>
-                    <div class="dotnav" style="text-align:center"></div>
                 </div>
             </div>
-        </div>
-        </div>
     </section>
-
-
 
     <!-- skills section start -->
     <section class="skills" id="skills">
@@ -201,19 +247,48 @@
             <h2 class="title">Mes compétences</h2>
             <div>
                 <div class="adobe-skills">
-                    
-                    <img src="./images/competence/005-experience.svg" alt="xd" title="Adobe XD"/>
-                    <img src="./images/competence/003-illustrator.svg" alt="illustrator" title="Illustrator"/>
-                    <img src="./images/competence/007-after-effects.svg" alt="after effect" title="After Effects"/>
-                    <img src="./images/competence/004-indesign.svg" alt="indesign" title="InDesign"/>
-                    <img src="./images/competence/001-photoshop.svg" alt="photoshop" title="Photoshop"/>
+                    <div class="skill-item">
+                        <img src="./images/competence/005-experience.svg" alt="xd" title="Adobe XD" />
+                        <p>Adobe XD</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/003-illustrator.svg" alt="illustrator" title="Illustrator" />
+                        <p>Illustrator</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/007-after-effects.svg" alt="after effect" title="After Effects" />
+                        <p>After Effects</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/004-indesign.svg" alt="indesign" title="InDesign" />
+                        <p>InDesign</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/001-photoshop.svg" alt="photoshop" title="Photoshop" />
+                        <p>Photoshop</p>
+                    </div>
                 </div>
                 <div class="programming-skills">
-                    <img src="./images/competence/java.svg" alt="java" title="Java"/>
-                    <img src="./images/competence/c-sharp-c-seeklogo.com.svg" alt="c#" title="C# .Net Core"/>
-                    <img src="./images/competence/cdnlogo_mysql.svg" alt="mysql" title="MySQL"/>
-                    <img src="./images/competence/javascript-js-seeklogo.com.svg" alt="js" title="Javascript"/>
-                    <img src="./images/competence/angular-seeklogo.com.svg" alt="angular" title="Angular"/>
+                    <div class="skill-item">
+                        <img src="./images/competence/java.svg" alt="java" title="Java" />
+                        <p>Java</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/c-sharp-c-seeklogo.com.svg" alt="c#" title="C# .Net Core" />
+                        <p>.Net</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/cdnlogo_mysql.svg" alt="mysql" title="MySQL" />
+                        <p>MySQL</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/javascript-js-seeklogo.com.svg" alt="js" title="Javascript" />
+                        <p>Javascript</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="./images/competence/angular-seeklogo.com.svg" alt="angular" title="Angular" />
+                        <p>Angular</p>
+                    </div>
                 </div>
             </div>
         </div>
