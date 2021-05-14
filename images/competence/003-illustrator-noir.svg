@@ -3,16 +3,13 @@
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#5E3C16;}
-	.st1{fill:#472E11;}
-	.st2{fill:#DF871E;}
+	.st0{fill:#FF8D3F;}
+	.st1{fill:#FFFFFF;}
 </style>
 <circle class="st0" cx="256" cy="256" r="256"/>
-<path class="st1" d="M511.2,235.9L407.6,132.4h-47.2v43.7l24.2,24.2h-24.2v39.6L252.9,132.4h-52.6l-96,246.4l132.6,132.6
-	c6.3,0.5,12.6,0.7,19.1,0.7c141.4,0,256-114.6,256-256C512,249.3,511.7,242.6,511.2,235.9z"/>
 <g>
-	<path class="st2" d="M351.6,378.7h-54.1l-21.5-56h-98.5l-20.3,56h-52.8l96-246.4h52.6L351.6,378.7z M260,281.2L226,189.8
+	<path class="st1" d="M351.6,378.7h-54.1l-21.5-56h-98.5l-20.3,56h-52.8l96-246.4h52.6L351.6,378.7z M260,281.2L226,189.8
 		l-33.3,91.4H260z"/>
-	<path class="st2" d="M360.4,176.1v-43.7h47.2v43.7H360.4z M360.4,378.7V200.2h47.2v178.5L360.4,378.7L360.4,378.7z"/>
+	<path class="st1" d="M360.4,176.1v-43.7h47.2v43.7H360.4z M360.4,378.7V200.2h47.2v178.5L360.4,378.7L360.4,378.7z"/>
 </g>
 </svg>
