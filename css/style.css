@@ -47,6 +47,7 @@ section{
     align-items: center;
     justify-content: space-between;
 }
+
 section .title{
     position: relative;
     text-align: center;
@@ -256,6 +257,7 @@ section .title::after{
     text-align: left;
 }
 
+
 /* projects section styling */
 .projects{
     color:#fff;
@@ -292,6 +294,7 @@ section .title::after{
 .projects .serv-content .card:hover .box{
     transform: scale(0.90);
 }
+
 .projects .serv-content .card i{
     font-size: 50px;
     color: crimson;
