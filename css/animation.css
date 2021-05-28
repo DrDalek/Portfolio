@@ -1,0 +1,42 @@
+.fade-left{
+	animation: fade-in-left-to-right 1s 0s both;
+}
+
+.fade-right{
+    animation: fade-in-right-to-left 1s 700ms both;
+}
+
+.pop{
+	animation: pop-show 500ms cubic 0s both;
+}
+
+@keyframes pop-show{
+	from{
+		transform: scale(0)
+	}
+	to{
+		transform: scale(1);
+	}
+}
+
+@keyframes fade-in-left-to-right {
+	from{
+		margin-left: -50%;
+		opacity: 0;
+	}
+	to{
+		margin-left: 0%;
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-right-to-left {
+	from{
+		margin-right: -50%;
+		opacity: 0%;
+	}
+	to{
+		margin-right: 0px;
+		opacity: 1;
+	}
+}
